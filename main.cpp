@@ -1,64 +1,25 @@
-#include "Engenheiro.cpp"
-#include "Vendedor.cpp"
+#include "Engenheiro.hpp"
+#include "Vendedor.hpp"
 
 int main() {
 
-  Engenheiro eng1;
-  eng1.nome = "Joao Snow";
-  eng1.salarioHora = 35;
-  eng1.projetos = 3; 
-  std::cout << "Nome: " << eng1.nome << std::endl;
-  std::cout << "Salario Mes: " << eng1.pagamentoMes(9.5) << std::endl;
-  std::cout << "Projetos: " << eng1.projetos << std::endl;
-  std::cout << std::endl;
-  
-  Engenheiro eng2;
-  eng2.nome = "Daniela Targaryen";
-  eng2.salarioHora = 30;
-  eng2.projetos = 1; 
-  std::cout << "Nome: " << eng2.nome << std::endl;
-  std::cout << "Salario Mes: " << eng2.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng2.projetos << std::endl;  
-  std::cout << std::endl;
-  
-  Engenheiro eng3;
-  eng3.nome = "Bruno Stark";
-  eng3.salarioHora = 30;
-  eng3.projetos = 2; 
-  std::cout << "Nome: " << eng3.nome << std::endl;
-  std::cout << "Salario Mes: " << eng3.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng3.projetos << std::endl;  
-  std::cout << std::endl;
-  
-  
-  Vendedor vend1;
-  vend1.nome = "Tonho Lannister";
-  vend1.salarioHora = 20;
-  vend1.quotaMensalVendas = 5000;
-  
-  std::cout << "Nome: " << vend1.nome << std::endl;
-  std::cout << "Salario Mes: " << vend1.pagamentoMes(6) << std::endl;  
-  std::cout << "Quota vendas: " << vend1.quotaTotalAnual() << std::endl;
-  std::cout << std::endl;
-  
-  Vendedor vend2;
-  vend2.nome = "Jose Mormont";
-  vend2.salarioHora = 25;
-  vend2.quotaMensalVendas = 3000;
-  
-  std::cout << "Nome: " << vend2.nome << std::endl;
-  std::cout << "Salario Mes: " << vend2.pagamentoMes(8) << std::endl;  
-  std::cout << "Quota vendas: " << vend2.quotaTotalAnual() << std::endl; 
-  std::cout << std::endl;  
-	
-  Vendedor vend3;
-  vend3.nome = "Sonia Stark";
-  vend3.salarioHora = 30;
-  vend3.quotaMensalVendas = 4000;
-  
-  std::cout << "Nome: " << vend3.nome << std::endl;
-  std::cout << "Salario Mes: " << vend3.pagamentoMes(8) << std::endl;  
-  std::cout << "Quota vendas: " << vend3.quotaTotalAnual() << std::endl;  
+  Engenheiro v_eng[3];
+  v_eng[0].set_engenheiro(35.0,"Joao Snow",3, 9.5);
+  v_eng[1].set_engenheiro(30.0,"Daniela Targaryen",1, 8.0);
+  v_eng[2].set_engenheiro(30.0,"Bruno Stark",2, 8.0);
+
+  for(int x = 0; x < 3; x++) {
+    v_eng[x].imprimir_info();
+  }
+
+  Vendedor v_ven[3];
+  v_ven[0].set_vendedor(20.0,"Tonho Lannister",5000.0, 6.0);
+  v_ven[1].set_vendedor(25.0,"Jose Mormont",3000.0, 8.0);
+  v_ven[2].set_vendedor(30.0,"Sonia Stark",4000.0, 8.0);
+
+  for(int x = 0; x < 3; x++) {
+    v_ven[x].imprimir_info();
+  }
   
   return 0;	
 }
